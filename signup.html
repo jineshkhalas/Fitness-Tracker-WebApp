@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Tracker Health Hub</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://www.gstatic.com/firebasejs/10.X.X/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.X.X/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.X.X/firebase-firestore-compat.js"></script>
+    <script src="firebase-config.js"></script>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">Health<span>Hub</span></a>
+            <div class="hamburger-menu" id="hamburger-menu">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="workout.html">Workout</a></li>
+                <li><a href="bmi.html">BMI</a></li>
+                <li><a href="calorie.html">Calorie Scanner</a></li>
+                <li><a href="sleep.html">Sleep Tracker</a></li>
+                <li><a href="water.html">Water Intake</a></li>
+                <li id="auth-link-container"><a href="auth.html" class="btn" class="active">SignUp/SignIn</a></li>
+                <li>
+                    <!-- Theme Toggle Button -->
+                    <button id="theme-toggle"
+                        class="bg-transparent border-none text-xl cursor-pointer text-gray-700 dark:text-gray-300">
+                        <i class="fas fa-moon" id="theme-icon"></i>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main id="main-content">
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Fitness Tracker Health Hub. All rights reserved.</p>
+        <a href="privacy-policy.html">Privacy Policy</a>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

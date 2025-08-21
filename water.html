@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Hub - Water Intake</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">Health<span>Hub</span></a>
+            <div class="hamburger-menu" id="hamburger-menu">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="workout.html">Workout</a></li>
+                <li><a href="bmi.html">BMI</a></li>
+                <li><a href="calorie.html">Calorie Scanner</a></li>
+                <li><a href="sleep.html">Sleep Tracker</a></li>
+                <li><a href="water.html" class="active">Water Intake</a></li>
+                <li id="auth-link-container"><a href="auth.html" class="btn">SignUp/SignIn</a></li>
+                <li>
+                    <!-- Theme Toggle Button -->
+                    <button id="theme-toggle"
+                        class="bg-transparent border-none text-xl cursor-pointer text-gray-700 dark:text-gray-300">
+                        <i class="fas fa-moon" id="theme-icon"></i>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container page-content">
+        <h1 class="page-title">Water Intake Tracker</h1>
+        <div class="water-tracker-container card">
+            <div class="water-glass">
+                <div class="water-level" id="water-level"></div>
+                <div class="glass-info">
+                    <span id="total-water">0</span> ml / 2500 ml
+                </div>
+            </div>
+            <div class="water-controls">
+                <h2>Add Water</h2>
+                <button class="btn water-btn" data-amount="100">100 ml</button>
+                <button class="btn water-btn" data-amount="250">250 ml</button>
+                <button class="btn water-btn" data-amount="500">500 ml</button>
+                <button class="btn water-btn" data-amount="750">750 ml</button>
+                <button class="btn water-btn" data-amount="1000">1000 ml</button>
+                <button id="reset-water-btn" class="btn btn-danger">Reset</button>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 Health Hub. All rights reserved.</p>
+        <a href="privacy-policy.html">Privacy Policy</a>
+    </footer>
+
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+
+    <!-- App Scripts -->
+    <script src="firebase-config.js"></script>
+    <script src="auth.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

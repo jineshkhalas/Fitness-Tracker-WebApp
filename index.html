@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Hub - Home</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">Health<span>Hub</span></a>
+            <div class="hamburger-menu" id="hamburger-menu">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="workout.html">Workout</a></li>
+                <li><a href="bmi.html">BMI</a></li>
+                <li><a href="calorie.html">Calorie Scanner</a></li>
+                <li><a href="sleep.html">Sleep Tracker</a></li>
+                <li><a href="water.html">Water Intake</a></li>
+                <li id="auth-link-container"><a href="auth.html" class="btn">SignUp/SignIn</a></li>
+                <li>
+                    <!-- Theme Toggle Button -->
+                    <button id="theme-toggle"
+                        class="bg-transparent border-none text-xl cursor-pointer text-gray-700 dark:text-gray-300">
+                        <i class="fas fa-moon" id="theme-icon"></i>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero-banner">
+        <div class="container">
+            <h1>Your Journey to a Healthier You Starts Now</h1>
+            <p>Track your progress, achieve your goals, and live a healthier life with Health Hub.</p>
+            <a href="workout.html" class="btn btn-primary">Start Tracking</a>
+        </div>
+    </header>
+
+    <main class="container page-content">
+        <section class="info-section">
+            <h2>Welcome to Health Hub</h2>
+            <p>We provide the tools you need to take control of your fitness and well-being. From personalized workout
+                plans to detailed tracking of your sleep, water intake, and nutrition, we're here to support you every
+                step of the way.</p>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <img src="https://i.pinimg.com/736x/5b/7f/d7/5b7fd70f27118531b841ce12d2db24cf.jpg" alt="Workout">
+                    <h3>Custom Workouts</h3>
+                    <p>Create your own workout plan from our extensive list of exercises.</p>
+                </div>
+                <div class="feature-card">
+                    <img src="https://i.pinimg.com/736x/45/63/32/456332c909f732da36000118c44943ab.jpg" alt="Nutrition">
+                    <h3>Nutrition Tracking</h3>
+                    <p>Scan food items to get instant calorie information and make smarter choices.</p>
+                </div>
+                <div class="feature-card">
+                    <img src="https://i.pinimg.com/736x/05/c9/11/05c911a2e863165bcfdacf7b465db27b.jpg" alt="Wellness">
+                    <h3>Wellness Hub</h3>
+                    <p>Monitor your BMI, sleep patterns, and hydration to maintain a balanced lifestyle.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="daily-tip-section">
+            <h3>Daily Health Tip</h3>
+            <div id="health-tip" class="tip-box">
+                <p>Loading your daily tip...</p>
+            </div>
+        </section>
+
+        <section class="motivation-section">
+            <h3>Motivational Quote</h3>
+            <div id="quote" class="quote-box">
+                <p>Loading a motivational quote...</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 Health Hub. All rights reserved.</p>
+        <a href="privacy-policy.html">Privacy Policy</a>
+    </footer>
+
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+
+    <!-- App Scripts -->
+    <script src="firebase-config.js"></script>
+    <script src="auth.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

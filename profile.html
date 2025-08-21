@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Hub - Profile</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">Health<span>Hub</span></a>
+            <div class="hamburger-menu" id="hamburger-menu">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="workout.html">Workout</a></li>
+                <li><a href="bmi.html">BMI</a></li>
+                <li><a href="calorie.html">Calorie Scanner</a></li>
+                <li><a href="sleep.html">Sleep Tracker</a></li>
+                <li><a href="water.html">Water Intake</a></li>
+                <li id="auth-link-container"><a href="profile.html" class="active">Profile</a></li>
+                <li>
+                    <button id="theme-toggle" class="theme-toggle-btn">
+                        <i id="theme-icon" class="fas fa-moon"></i>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container page-content">
+        <h1 class="page-title">My Profile & Dashboard</h1>
+
+        <div class="profile-container">
+
+            <div class="performance-dashboard">
+                <div class="dashboard-stats card">
+                    <h2>Performance Stats</h2>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <h3>Daily Streak</h3>
+                            <p class="performance-values" id="dash-streak">0</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>Total Points</h3>
+                            <p class="performance-values" id="dash-points">0</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>Latest BMI</h3>
+                            <p class="performance-values" id="dash-bmi">-</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>Water Today</h3>
+                            <p class="performance-values" id="dash-water">0ml</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>Sleep Last Night</h3>
+                            <p class="performance-values" id="dash-sleep">0h</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="calendar-container card">
+                    <h2>Activity & Mood Calendar</h2>
+                    <div class="calendar-header">
+                        <button id="prev-month-btn">&lt;</button>
+                        <h3 id="current-month-year"></h3> <button id="next-month-btn">&gt;</button>
+                    </div>
+                    <div class="calendar-days-header">
+                        <div>Sun</div>
+                        <div>Mon</div>
+                        <div>Tue</div>
+                        <div>Wed</div>
+                        <div>Thu</div>
+                        <div>Fri</div>
+                        <div>Sat</div>
+                    </div>
+                    <div class="calendar-grid" id="calendar-grid">
+                    </div>
+                    <div class="mood-logger-section">
+                        <h3>Log today's mood:</h3>
+                        <div class="mood-selector-container">
+                            <select id="mood-selector" class="form-control">
+                                <option value="">Select Mood</option>
+                                <option value="happy">😊 Happy</option>
+                                <option value="neutral">😐 Neutral</option>
+                                <option value="sad">😔 Sad</option>
+                                <option value="angry">😠 Angry</option>
+                                <option value="strong">💪 Strong</option>
+                                <option value="calm">🧘‍♀️ Calm</option>
+                                <option value="stressed">😩 Stressed</option>
+                                <option value="sick">🤒 Sick</option>
+                            </select>
+                            <!-- In profile.html, near your mood selector and button -->
+                            <div id="mood-status-message" class="text-center mt-2 text-sm"></div>
+                            <button id="log-mood-btn" class="btn btn-primary">Log Mood</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="profile-details card">
+                <h2>User Information</h2>
+                <form id="profile-form">
+                    <div class="form-group">
+                        <label for="profile-name">Full Name</label>
+                        <input type="text" id="profile-name" disabled>
+                    </div>
+                    <div class="form-group">
+                        <label for="profile-email">Email</label>
+                        <input type="email" id="profile-email" disabled>
+                    </div>
+                    <div class="form-group">
+                        <label for="profile-dob">Date of Birth</label>
+                        <input type="date" id="profile-dob" disabled>
+                    </div>
+                    <div class="form-group">
+                        <label for="profile-height">Height (cm)</label>
+                        <input type="number" id="profile-height" disabled>
+                    </div>
+                    <div class="form-group">
+                        <label for="profile-weight">Weight (kg)</label>
+                        <input type="number" id="profile-weight" disabled>
+                    </div>
+                    <button type="button" id="edit-profile-btn" class="btn">Edit Profile</button>
+                    <button type="submit" id="save-profile-btn" class="btn btn-primary" style="display:none;">Save
+                        Changes</button>
+                </form>
+                <button id="logout-btn" class="btn btn-danger mt-3">Logout</button>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 Health Hub. All rights reserved.</p>
+        <a href="privacy-policy.html">Privacy Policy</a>
+    </footer>
+
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+
+    <script src="firebase-config.js"></script>
+    <script src="auth.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
